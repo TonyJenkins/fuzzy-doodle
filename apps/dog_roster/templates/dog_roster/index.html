@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WAT Dog Club</title>
+        <link rel="icon"
+              type="image/x-icon"
+              href="{% static 'dog_roster/favicon.ico' %}"
+              sizes="64x64" />
+        <link rel="icon"
+              type="image/svg+xml"
+              href="{% static 'dog_roster/favicon.svg' %}" />
+        <link rel="stylesheet" href="{% static 'dog_roster/styles.css' %}" />
+    </head>
+    <body>
+        <main>
+            <h1>WAT Dog Club</h1>
+            <ul>
+                {% for dog in all_dogs %}
+                    <li>{{ dog }}</li>
+                {% empty %}
+                    <li>No dogs registered yet.</li>
+                {% endfor %}
+            </ul>
+        </main>
+    </body>
+</html>
